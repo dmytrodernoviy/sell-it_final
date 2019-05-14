@@ -12,6 +12,9 @@ const AuthorizedStyle = styled.div`
         justify-content: space-between;
         img{
             margin-right: 10px;
+            height: 35px;
+            width: 35px;
+            cursor: pointer;
         }
     }
 `;

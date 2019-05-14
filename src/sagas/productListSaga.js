@@ -2,13 +2,13 @@ import { requestProductList,
          requestProductListSuccess,
          requestProductListError } from "../action-creators/productListActionCreator";
 import {put, call, takeEvery} from 'redux-saga/effects'
-import axios from 'axios'
+import { fetchProduct } from "../api-client/productListRequest";
 
 function* fetchProductListAsync() {
     try {
         yield put(requestProductList());
         const data = yield call(() => {
-            return axios.get("http://light-it-04.tk/api/posters/")
+            return  fetchProduct()
                     .then(res => res.data.data)
             }
         );

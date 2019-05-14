@@ -9,7 +9,8 @@ const mapStateToProps = state => ({
   productList: state.fetchProductListReducer.productList,
   isLoadingList: state.fetchProductListReducer.isLoadingList,
   filterProducts: state.filterProducts,
-  showModal: state.showModal.isShowForm
+  showModal: state.showModal.isShowForm,
+  authorized: state.authorized
 });
 
 class ProductList extends Component {
@@ -30,6 +31,7 @@ class ProductList extends Component {
                 ? <Preloader />
                 : <ListContainer data={this.filterProduct(this.props.filterProducts)}/>
                 }
+                
                 {(showModal)
                 ? <NewProduct />
                 : null}

@@ -3,9 +3,9 @@ import UserBlockStyle from './style';
 import Authorized from '../Authorized';
 import HoverUserMenu from '../HoverUserMenu';
 
-const UserBlock = () => 
+const UserBlock = ({logOut, authorized}) => 
     <UserBlockStyle>
-        <Authorized />
+        <Authorized logOut={logOut} authorized={authorized}/>
         <HoverUserMenu />
     </UserBlockStyle>
 

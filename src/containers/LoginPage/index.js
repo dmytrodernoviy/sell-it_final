@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import SideBlockForms from '../../components/LoginPageComponents/SideBlockForms';
-import Footer from '../../components/LoginPageComponents/Footer';
 import LoginPageImage from '../../components/LoginPageComponents/LoginPageImage';
 
 class LoginPage extends Component {
@@ -10,7 +9,6 @@ class LoginPage extends Component {
             <React.Fragment>
                 <LoginPageImage />
                 <SideBlockForms sign={sign}/>
-                <Footer/>
             </React.Fragment>
         )
     }

@@ -2,13 +2,14 @@ import { requestProductItem,
          requestProductItemSuccess, 
          requestProductItemError } from "../action-creators/productItemActionCreator";
 import {put, call, takeEvery} from 'redux-saga/effects'
-import axios from "axios"
+import { fetchProductItem } from "../api-client/productItemRequest";
+
 
 function* fetchProductItemtAsync(params) {
     try {
       yield put(requestProductItem());
       const data = yield call(() => {
-        return axios.get(`http://light-it-04.tk/api/posters/${params.id}`)
+        return fetchProductItem(params.id)
                 .then(res => res.data)
         }
       );

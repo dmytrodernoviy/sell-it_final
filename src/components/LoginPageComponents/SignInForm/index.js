@@ -3,25 +3,42 @@ import StyledForm from './style';
 import {Field, reduxForm} from 'redux-form'
 import {renderField} from '../../../form-validation/renderFields'
 import {required, email} from '../../../form-validation/constFieldValidate'
+import {connect} from 'react-redux'
+import { loginRequest } from '../../../action-creators/authorize';
 
-const SignInForm = () => {
+const mapStateToProps = state => ({
+    authorized: state.authorized
+})
+
+const SignInForm = props => {
+        const { handleSubmit, submitting, authorized} = props
+
+        const submit = (values) => {
+            props.dispatch(loginRequest({
+                email: values.email, 
+                password: values.password}))
+            }
+
         return (
-            <StyledForm >
+            <StyledForm onSubmit={handleSubmit(submit)}>
                 <Field name="email" 
                        component={renderField} 
                        type="email" 
                        label={"Email"}
                        validate={[required, email]}/>
-                <Field name="Password" 
+                <Field name="password" 
                        component={renderField} 
                        type="password" 
-                       label="Password" 
+                       label="password" 
                        validate={required}/>
-                <button type="submit">Login</button>
+                {authorized.errorLogin && <strong>{authorized.errorLogin}</strong>}
+                <button type="submit" disabled={submitting}>Login</button>
             </StyledForm>
         )
 } 
     
-export default reduxForm({
+const SignInReduxForm = reduxForm({
     form: 'signInForm'
 })(SignInForm)
+
+export default connect(mapStateToProps)(SignInReduxForm)
