@@ -1,7 +1,7 @@
 import React from 'react'
 import HeaderInputStyle from './style';
 import {connect} from 'react-redux';
-import { findProduct } from '../../../action-creators/findProduct';
+import { requestSearchProduct } from '../../../action-creators/productListActionCreator';
 
 const mapStateToProps = state => ({
     productList: state.fetchProductListReducer.productList
@@ -9,11 +9,11 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     findProduct: (e) => {
-        dispatch(findProduct(e))
+        dispatch(requestSearchProduct(e))
     } 
 })
 
-const HeaderSearch = ({productList, findProduct}) => 
+const HeaderSearch = ({findProduct}) => 
     <HeaderInputStyle type="text" 
                       placeholder="Try find something" 
                       onChange={(e) => findProduct(e.target.value)}/>

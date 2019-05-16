@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const ProductImgStyle = styled.div`
     width: 100%;
-    height: 200px;
+    height: 100%;
     img {
         width: 100%;
         height: 100%;

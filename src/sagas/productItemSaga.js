@@ -11,6 +11,7 @@ function* fetchProductItemtAsync(params) {
       const data = yield call(() => {
         return fetchProductItem(params.id)
                 .then(res => res.data)
+                
         }
       );
       yield put(requestProductItemSuccess(data));

@@ -1,17 +1,11 @@
 import styled from 'styled-components'
 
 const ProductItemStyle = styled.div`
-    width: 24%;
-    @media (max-width: 1024px) {
-        width: 32%;
-    }
-
-    @media(max-width: 768px) {
-        width: 48%;
-    }
-
-    @media(max-width: 480px) {
-        width: 100%;
+    width: 275px;
+    height: 180px;
+    margin: 30px 10px;
+    @media(max-width: 640px) {
+        margin: 30px auto;
     }
 `
 

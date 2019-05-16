@@ -15,6 +15,7 @@ import {createBrowserHistory} from 'history';
 import httpService from './api-client/interceptors';
 import requireAuth from './components/common/PrivateRouteHOC';
 import { autoLoginRequest } from './action-creators/authorize';
+import NotFound from './components/common/NotFound';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
@@ -27,11 +28,10 @@ sagaMiddleware.run(rootSaga);
 export const history = createBrowserHistory();
 httpService.setupInterceptors(store, history)
 
+const token = localStorage.getItem("token")
+if(token) store.dispatch(autoLoginRequest(token))
+
 class App extends Component {
-  componentDidMount() {
-    const token = localStorage.getItem("token")
-    if(token) store.dispatch(autoLoginRequest(token))
-  }
   
 render() {
     return (
@@ -39,6 +39,7 @@ render() {
         <Router history={history}>
           <Switch>
           <Route path="/login-page/:sign" component={LoginPage} />
+          <Route path="/not-found" component={requireAuth(NotFound)} />
           <Route path="/user-page" component={requireAuth(UserPage)} />
           <Route path="/" component={requireAuth(ProductRoutes)} />
           </Switch>

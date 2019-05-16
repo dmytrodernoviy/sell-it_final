@@ -17,6 +17,18 @@ export const showModalForm = () => {
 export const closeModalForm = () => {
     return { type: "CLOSE_MODAL_FORM"}
 }
+
+export const requestSearchProduct = (val) => {
+    return {type: "REQUEST_SEARCH_PRODUCT", val: val}
+}
+
+export const searchProductSuccess = (data) => {
+    return {type: "REQUEST_SEARCH_SUCCESS", payload: data}
+}
+
+export const fetchProductSearch = () => {
+    return {type: "FETCH_PRODUCT_SEARCH"}
+}
   
 export const fetchProductList = () => {
     return { type: 'FETCHED_PRODUCT_LIST' }

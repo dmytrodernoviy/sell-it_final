@@ -4,6 +4,7 @@ const StyledForm = styled.form`
     width: 100%;
     display: flex;
     flex-direction: column;
+    text-align: center;
     input {
         width: 100%;
         background: transparent;

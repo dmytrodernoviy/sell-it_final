@@ -1,11 +1,11 @@
-import { logError, logInSuccess } from "../action-creators/authorize";
+import { logInError, logInSuccess } from "../action-creators/authorize";
 import {put, call, takeEvery} from 'redux-saga/effects'
-import { loginRequest } from "../api-client/loginRequest";
+import { logInRequest } from "../api-client/loginRequest";
 import {history} from '../App'
 
 function* loginAsync(formValues) {
     try {
-        const response = yield call(loginRequest, formValues.values)
+        const response = yield call(logInRequest, formValues.values)
         if(response.statusText === "OK") {
             yield put(logInSuccess(response.data));
             localStorage.setItem("token", response.data.token)
@@ -13,7 +13,7 @@ function* loginAsync(formValues) {
         } 
 
         } catch (error) {
-            yield put(logError());
+            yield put(logInError(error.response.data));
         }
 }
 

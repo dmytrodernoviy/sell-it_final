@@ -21,7 +21,7 @@ class ProductInfo extends Component {
             <React.Fragment>
                  {(isLoadingItem)
                  ? <Preloader />
-                 : <SingleProductInfo item = {productItem}/>
+                 : <SingleProductInfo item = {productItem}/> 
                 }
             </React.Fragment>
         )
