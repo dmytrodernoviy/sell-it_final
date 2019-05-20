@@ -17,14 +17,19 @@ const mapDispatchToProps = dispatch => ({
     }
 })
 
+export const Context = React.createContext()
+
 const ProductRoutes = ({logOut, authorized}) => (
     <React.Fragment>
-        <Header logOut={logOut} authorized={authorized}/>
+        <Context.Provider value = {{logOut: logOut, authorized: authorized}} >
+            <Header />
+        </Context.Provider>
             <Switch>
                 <Route exact path="/" component={ProductList} />
                 <Route path="/product/:id" component={ProductInfo} />
             </Switch>
         <Footer />
+        
     </React.Fragment>
 )
 

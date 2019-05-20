@@ -50,7 +50,12 @@ const NewProductStyle = styled.div`
         div {
             width: 75%;
         }
-        
+    }
+    @media(max-width: 480px) {
+        div {
+            width: 85%;
+            height: 80vh;
+        }
     }
 `
 

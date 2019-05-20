@@ -8,6 +8,7 @@ const FooterStyled = styled.div`
     position: fixed;
     left: 0;
     bottom: 0;
+    opacity: .95;
     span {
         color: white;
         font-size: 18px

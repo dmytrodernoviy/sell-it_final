@@ -33,3 +33,15 @@ export const logOut = () => {
 export const autoLoginRequest = (token) => {
     return ({type: 'AUTO_LOGIN_REQUEST', token: token})
 }
+
+export const getProfileInfo = () => {
+    return ({type: "GET_PROFILE_INFO"})
+}
+
+export const getProfileInfoSuccess = (info) => {
+    return ({type: "GET_PROFILE_INFO_SUCCESS", info: info})
+}
+
+export const getProfileInfoError = (error) => {
+    return ({type: "GET_PROFILE_INFO_ERROR", error: error})
+}

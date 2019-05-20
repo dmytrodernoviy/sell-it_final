@@ -6,6 +6,8 @@ import { watchRegistered } from "./registeredSaga";
 import { watchLogOut } from "./logOutSaga";
 import { watchAutoLogin } from "./autoLoginSaga";
 import { watchSearchProduct } from "./searchProductSaga";
+import { watchRequestProductAdd } from "./addProductSaga";
+import { watchGetProfileInfo } from "./getProfileInfoSaga";
 
 export function * rootSaga() {
     yield all([
@@ -15,6 +17,8 @@ export function * rootSaga() {
       watchLogOut(),
       watchRegistered(),
       watchSearchProduct(),
-      watchAutoLogin()
+      watchAutoLogin(),
+      watchRequestProductAdd(),
+      watchGetProfileInfo()
     ])
   }

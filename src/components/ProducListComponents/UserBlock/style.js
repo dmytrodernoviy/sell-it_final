@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const UserBlockStyle = styled.div`
     width: 30%;
-    height: 50px;
+    height: 100%;
     background: #00b3be;
     display: flex;
     justify-content: center;
@@ -38,6 +38,7 @@ const UserBlockStyle = styled.div`
 
     @media(max-width: 480px) {
         width: 100%;
+        height: 150px;
     }
 `;
 

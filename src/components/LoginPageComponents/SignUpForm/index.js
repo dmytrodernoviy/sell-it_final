@@ -44,11 +44,18 @@ const SignUpForm = props => {
                        type="password" 
                        label="Password" 
                        validate={[required, minLength8]}/>
+                {error && 
+                error.password1 &&
+                <strong>{error.password1[0]}</strong>}
                 <Field name="password_2" 
                        component={renderField} 
                        type="password" 
                        label="Confirm password" 
                        validate={[required, minLength8]}/>
+                {error && 
+                error.non_field_errors &&
+                <strong>{error.non_field_errors[0]}</strong>}
+
                 <button type="submit" disabled={submitting}>Register</button>
             </StyledForm>
         )

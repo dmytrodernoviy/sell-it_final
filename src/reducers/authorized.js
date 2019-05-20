@@ -21,6 +21,10 @@ export default function authorized(state = initialState, action) {
             return {...state, isLogin: false, errorLogin: null, errorRegister: action.payload, userData: {} }
         case "LOG_OUT": 
             return {...state, isLogin: false, userData: {}, errorLogin: null, errorRegister: null}
+        case "GET_PROFILE_INFO_SUCCESS":
+            return {...state, userData: action.info}
+        case "GET_PROFILE_INFO_ERROR":
+            return {...state, errorLogin: action.error}
         default: 
             return state
     } 

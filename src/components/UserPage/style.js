@@ -23,6 +23,9 @@ const UserPageStyle = styled.div`
             margin-bottom: 15px;
         }
     }
+    a {
+        width: 30%;
+    }
     .user-photo {
         width: 170px;
         height: 170px;

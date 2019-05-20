@@ -1,6 +1,6 @@
 import { registerError, registerSuccess } from "../action-creators/authorize";
 import { put, call, takeEvery } from 'redux-saga/effects'
-import { registerRequest } from "../api-client/registeredRequest";
+import { registerRequest } from "../api-client/userAPI";
 import {history} from '../App'
 
 function* registeredAsync(formValues) {

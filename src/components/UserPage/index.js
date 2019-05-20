@@ -1,6 +1,8 @@
 import React from 'react'
 import UserPageStyle from './style';
 import {connect} from 'react-redux'
+import Button from '../LoginPageComponents/Button';
+import {Link} from 'react-router-dom'
 
 const mapStateToProps = state => ({
     authorized: state.authorized
@@ -17,6 +19,9 @@ const UserPage = ({authorized}) =>
             <span>Location: {authorized.userData.location || "Unknown"}</span>
             <span>Color Scheme: {authorized.userData.color_scheme || "Unknown"}</span>
             <span>Language: {authorized.userData.language || "Unknown"}</span>
+            <Link to="/" >
+                <Button width="100%" title="Return" />
+            </Link>
         </div>
     </UserPageStyle>
 

@@ -6,6 +6,8 @@ const PreloaderStyle = styled.div`
     height: 100%;
     width: 100%;
     position: fixed;
+    background: #CAC9C9;
+    z-index: -10;
     & .caption {
         margin: 0 auto;
     }

@@ -14,8 +14,10 @@ const AuthorizedStyle = styled.div`
             margin-right: 10px;
             height: 35px;
             width: 35px;
-            cursor: pointer;
         }
+    }
+    img {
+        cursor: pointer;
     }
 `;
 

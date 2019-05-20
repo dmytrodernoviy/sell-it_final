@@ -6,6 +6,17 @@ const SingleProductStyle = styled.div`
     margin-top: 10vh;
     display: flex;
     justify-content: center;
+    :before {
+        content: "";
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        position: fixed;
+        z-index: -10;
+        top: 0;
+        left: 0;
+        background: #CAC9C9;
+    }
     img {
         width: 300px;
         height: 200px;

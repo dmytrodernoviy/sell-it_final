@@ -5,13 +5,13 @@ import UserBlock from '../UserBlock';
 import HeaderStyle from './style'
 import {Link} from 'react-router-dom'
 
-const Header = ({logOut, authorized}) => 
+const Header = () => 
     <HeaderStyle>
         <Link to="/">
             <LogoSell />
         </Link>
         <HeaderSearch/>
-        <UserBlock logOut={logOut} authorized={authorized}/>
+        <UserBlock />
     </HeaderStyle>
 
 export default Header

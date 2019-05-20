@@ -13,3 +13,15 @@ export const requestProductItemError = () => {
 export const fetchProductItem = (id) => {
     return { type: 'FETCHED_PRODUCT_ITEM', id: id }
 };
+
+export const requestProductAdd = (formValues) => {
+    return {type: "REQUEST_PRODUCT_ADD", values: formValues}
+}
+
+export const requestProductAddSuccess = (data) => {
+    return {type: "REQUEST_PRODCUT_ADD_SUCCESS", data: data}
+}
+
+export const requestProductAddError = (error) => {
+    return {type: "REQUEST_PRODUCT_ADD_ERROR", error: error}
+}

@@ -1,6 +1,6 @@
 import {put, call, takeEvery} from 'redux-saga/effects'
 import {history} from '../App'
-import { logOutRequest } from '../api-client/logOutRequest';
+import { logOutRequest } from '../api-client/userAPI';
 import { logOut } from '../action-creators/authorize';
 
 function* logOutAsync() {

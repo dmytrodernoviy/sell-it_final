@@ -4,10 +4,21 @@ const ListContainerStyle = styled.div`
     width: 95%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 7% 0 2% 0;
+    padding: 7% 0 10vh 0;
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
+    :before {
+        content: "";
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        position: fixed;
+        z-index: -10;
+        top: 0;
+        left: 0;
+        background: #CAC9C9;
+    }
     h1 {
         position: fixed;
         left: 50%;

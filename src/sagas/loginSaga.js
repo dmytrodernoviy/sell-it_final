@@ -1,6 +1,6 @@
 import { logInError, logInSuccess } from "../action-creators/authorize";
 import {put, call, takeEvery} from 'redux-saga/effects'
-import { logInRequest } from "../api-client/loginRequest";
+import { logInRequest } from "../api-client/userAPI";
 import {history} from '../App'
 
 function* loginAsync(formValues) {
