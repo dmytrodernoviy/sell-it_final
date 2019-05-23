@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {useEffect} from 'react'
 import ListContainer from '../../components/ProducListComponents/ListContainer';
 import {connect} from 'react-redux';
 import {fetchProductList} from '../../action-creators/productListActionCreator';
@@ -12,27 +12,25 @@ const mapStateToProps = state => ({
   authorized: state.authorized
 });
 
-class ProductList extends Component {
+const ProductList =(props) => {
+    const {isLoadingList, productList, showModal} = props
 
-    componentDidMount() {
-        this.props.dispatch(fetchProductList());
-    }
+    useEffect(() => {
+        props.dispatch(fetchProductList())
+    }, [])
 
-    render() {
-        const {isLoadingList, showModal, productList} = this.props;
-        return (
-            <React.Fragment>
-                {(isLoadingList) 
-                ? <Preloader />
-                : <ListContainer data={productList}/>
-                }
-                
-                {(showModal)
-                ? <NewProduct />
-                : null}
-            </React.Fragment>
-        )
-    }
+    return (
+        <React.Fragment>
+            {(isLoadingList) 
+            ? <Preloader />
+            : <ListContainer data={productList}/>
+            }
+            
+            {(showModal)
+            ? <NewProduct />
+            : null}
+        </React.Fragment>
+    )
 }
 
 export default connect(mapStateToProps)(ProductList);

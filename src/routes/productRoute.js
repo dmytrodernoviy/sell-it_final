@@ -21,7 +21,7 @@ export const Context = React.createContext()
 
 const ProductRoutes = ({logOut, authorized}) => (
     <React.Fragment>
-        <Context.Provider value = {{logOut: logOut, authorized: authorized}} >
+        <Context.Provider value = {{logOut, authorized}} >
             <Header />
         </Context.Provider>
             <Switch>
@@ -29,7 +29,6 @@ const ProductRoutes = ({logOut, authorized}) => (
                 <Route path="/product/:id" component={ProductInfo} />
             </Switch>
         <Footer />
-        
     </React.Fragment>
 )
 

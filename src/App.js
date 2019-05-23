@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import '../src/reset.css'
 import LoginPage from './containers/LoginPage';
 import {Switch, Route} from 'react-router-dom'
-import {Router} from 'react-router'
+import {Router} from 'react-router-dom'
 import {Provider} from 'react-redux';
 import combineReducers from './reducers/index'
 import { applyMiddleware, createStore } from "redux"

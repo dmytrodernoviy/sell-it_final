@@ -8,6 +8,7 @@ const HeaderStyle = styled.header`
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
