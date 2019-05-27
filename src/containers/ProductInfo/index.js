@@ -4,15 +4,19 @@ import {connect} from 'react-redux';
 import Preloader from '../../components/common/Preloader';
 import { fetchProductItem } from '../../action-creators/productItemActionCreator';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   productItem: state.fetchProductItemReducer.productItem,
   isLoadingItem: state.fetchProductItemReducer.isLoadingItem,
 });
 
+const mapDispatchToProps = (dispatch) => ({
+  fetchProductItem: (id) => dispatch(fetchProductItem(id))
+})
+
 class ProductInfo extends Component {
     componentDidMount() {
       const id = this.props.match.params.id
-      this.props.dispatch(fetchProductItem(id))
+      this.props.fetchProductItem(id)
     }
     
     render() {
@@ -28,4 +32,4 @@ class ProductInfo extends Component {
     }
 }
 
-export default connect(mapStateToProps)(ProductInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductInfo);

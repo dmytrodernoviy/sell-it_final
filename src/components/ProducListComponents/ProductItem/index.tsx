@@ -2,10 +2,15 @@ import React, {useState} from 'react'
 import ProductItemStyle from './style';
 import ProductImg from '../ProductImg';
 import ProductTitle from '../ProductTitle';
-import { CreateErrorHOC } from '../../common/CreateErrorHOC';
 
-const ProductItem = ({img, id, title}) => {
-    const [zoom, changeZoom] = useState(1)
+interface ProductItemProps {
+    img: string;
+    id: number;
+    title: string;
+}
+
+const ProductItem: React.FC<ProductItemProps> = ({img, id, title}) => {
+    const [zoom, changeZoom] = useState<number>(1)
 
     return (
         <ProductItemStyle onMouseEnter={() => {changeZoom(1.05)}}
@@ -17,4 +22,4 @@ const ProductItem = ({img, id, title}) => {
     )
 }
        
-export default CreateErrorHOC(ProductItem)
+export default ProductItem

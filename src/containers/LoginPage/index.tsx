@@ -1,8 +1,13 @@
 import React, {Component} from 'react'
 import SideBlockForms from '../../components/LoginPageComponents/SideBlockForms';
 import LoginPageImage from '../../components/LoginPageComponents/LoginPageImage';
+import { match } from 'react-router-dom';
 
-class LoginPage extends Component {
+interface LoginPageForm {
+    sign: string;
+}
+
+class LoginPage extends Component<{match: match<LoginPageForm>}> {
     render() {
         const {sign} = this.props.match.params
         return (

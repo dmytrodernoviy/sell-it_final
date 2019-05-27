@@ -3,7 +3,12 @@ import ProductTitleStyle from './style';
 import FaEye from '../../../assets/img/fa-eye.png'
 import {Link} from 'react-router-dom'
 
-const ProductTitle = ({id, title}) => 
+interface ProductTitleProps {
+    id: number;
+    title: string;
+}
+
+const ProductTitle: React.FC<ProductTitleProps> = ({id, title}) => 
     <ProductTitleStyle>
         <span>{title}</span>
         <Link to={`/product/${id}`}>

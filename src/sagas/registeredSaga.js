@@ -7,7 +7,7 @@ function* registeredAsync(formValues) {
 try {
    const response = yield call(registerRequest, formValues.values)
    if(response.statusText === "Created") {
-        yield put(registerSuccess(response.data));
+        yield put(registerSuccess(response.data.user));
         localStorage.setItem("token", response.data.token)
         history.push("/")
     }

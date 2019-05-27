@@ -7,7 +7,7 @@ function* loginAsync(formValues) {
     try {
         const response = yield call(logInRequest, formValues.values)
         if(response.statusText === "OK") {
-            yield put(logInSuccess(response.data));
+            yield put(logInSuccess(response.data.user));
             localStorage.setItem("token", response.data.token)
             history.push("/")
         } 

@@ -4,7 +4,7 @@ import LoginPage from './containers/LoginPage';
 import {Switch, Route} from 'react-router-dom'
 import {Router} from 'react-router-dom'
 import {Provider} from 'react-redux';
-import combineReducers from './reducers/index'
+import {rootReducer} from './reducers/index'
 import { applyMiddleware, createStore } from "redux"
 import ProductRoutes from './routes/productRoute';
 import createSagaMiddleware from 'redux-saga'
@@ -19,7 +19,7 @@ import NotFound from './components/common/NotFound';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
-  combineReducers,
+  rootReducer,
   composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 
