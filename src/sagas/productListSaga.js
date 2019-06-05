@@ -1,14 +1,15 @@
-import { requestProductList,
+import {
          requestProductListSuccess,
-         requestProductListError } from "../action-creators/productListActionCreator";
+         requestProductListError, 
+         requestProductList} from "../action-creators/productListActionCreator";
 import {put, call, takeEvery} from 'redux-saga/effects'
 import { fetchProduct } from "../api-client/productAPI";
 
-function* fetchProductListAsync() {
+function* fetchProductListAsync(page) {
     try {
         yield put(requestProductList());
-        const response = yield call(fetchProduct)
-        yield put(requestProductListSuccess(response.data.data));
+        const response = yield call(fetchProduct, page.number)
+        yield put(requestProductListSuccess(response.data));
     } catch (error) {
         yield put(requestProductListError());
     }

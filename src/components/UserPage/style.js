@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import defaultAvatar from '../../assets/img/default_user.png'
 
 const UserPageStyle = styled.div`
     background-color: #a39e9e;
@@ -29,7 +30,7 @@ const UserPageStyle = styled.div`
     .user-photo {
         width: 170px;
         height: 170px;
-        background: url(http://iephb.ru/wp-content/themes/iephb/images/default_user.png) no-repeat center;
+        background: url(${defaultAvatar}) no-repeat center;
         background-size: cover;
         border-radius: 30%;
         margin-bottom: 30px;

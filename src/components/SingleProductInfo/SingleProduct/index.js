@@ -1,6 +1,7 @@
 import React from 'react'
 import images from '../../../assets/img/product-item.png'
 import SingleProductStyle from './style';
+import propTypes from 'prop-types'
 
 const SingleProductInfo = ({item}) => {
     if(JSON.stringify(item)  === "{}") return null;
@@ -16,6 +17,10 @@ const SingleProductInfo = ({item}) => {
             </div>
         </SingleProductStyle>
     )
+}
+
+SingleProductInfo.propTypes = {
+    item: propTypes.object
 }
     
 export default SingleProductInfo

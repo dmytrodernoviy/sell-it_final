@@ -11,7 +11,7 @@ export const FETCH_PRODUCT_SEARCH = "FETCH_PRODUCT_SEARCH"
 export const FETCHED_PRODUCT_LIST = "FETCHED_PRODUCT_LIST"
 
 interface RequestedProductList {
-    type: typeof REQUESTED_PRODUCT_LIST;
+    type: typeof REQUESTED_PRODUCT_LIST
 };
 
 interface RequestedProductListSuccess {
@@ -46,7 +46,8 @@ interface FetchProductSearch {
 }
 
 interface FetchProductList {
-    type: typeof FETCHED_PRODUCT_LIST
+    type: typeof FETCHED_PRODUCT_LIST,
+    number: number
 }
 
 export type fetchProductListTypes = RequestedProductList

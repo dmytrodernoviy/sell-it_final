@@ -3,6 +3,7 @@ import UserPageStyle from './style';
 import {connect} from 'react-redux'
 import Button from '../LoginPageComponents/Button';
 import {Link} from 'react-router-dom'
+import propTypes from 'prop-types'
 
 const mapStateToProps = state => ({
     authorized: state.authorized
@@ -24,5 +25,9 @@ const UserPage = ({authorized}) =>
             </Link>
         </div>
     </UserPageStyle>
+
+UserPage.propTypes = {
+    authorized: propTypes.object
+}
 
 export default connect(mapStateToProps)(UserPage)

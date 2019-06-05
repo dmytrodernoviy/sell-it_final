@@ -3,6 +3,7 @@ import SingleProductInfo from '../../components/SingleProductInfo/SingleProduct'
 import {connect} from 'react-redux';
 import Preloader from '../../components/common/Preloader';
 import { fetchProductItem } from '../../action-creators/productItemActionCreator';
+import propTypes from 'prop-types'
 
 const mapStateToProps = (state) => ({
   productItem: state.fetchProductItemReducer.productItem,
@@ -30,6 +31,12 @@ class ProductInfo extends Component {
             </React.Fragment>
         )
     }
+}
+
+ProductInfo.propTypes = {
+  productItem: propTypes.object,
+  isLoadingItem: propTypes.bool,
+  fetchProductItem: propTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductInfo);

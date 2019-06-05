@@ -5,6 +5,7 @@ import {renderField} from '../../../form-validation/renderFields'
 import {required, email} from '../../../form-validation/constFieldValidate'
 import {connect} from 'react-redux'
 import { logInRequest } from '../../../action-creators/authorize';
+import propTypes from 'prop-types'
 
 const mapStateToProps = state => ({
     authorized: state.authorized
@@ -36,6 +37,12 @@ const SignInForm = props => {
             </StyledForm>
         )
 } 
+
+SignInForm.propTypes = {
+    handleSubmit: propTypes.func,
+    submitting: propTypes.bool,
+    authorized: propTypes.object
+}
     
 const SignInReduxForm = reduxForm({
     form: 'signInForm'

@@ -29,4 +29,5 @@ export interface ProductListState {
     isLoadingList: boolean;
     productList: ProductItem[];
     error: any;
+    meta: object
 }

@@ -13,7 +13,7 @@ from "../store-types/fetchProductList/actions-types";
 import { ProductItem } from "../store-types/fetchProductList/interfaces-types";
 
 export const requestProductList = ():fetchProductListTypes => {
-    return { type: REQUESTED_PRODUCT_LIST }
+    return { type: REQUESTED_PRODUCT_LIST}
 };
   
 export const requestProductListSuccess = (data: ProductItem[]):fetchProductListTypes => {
@@ -44,6 +44,6 @@ export const fetchProductSearch = ():fetchProductListTypes => {
     return {type: FETCH_PRODUCT_SEARCH}
 }
   
-export const fetchProductList = ():fetchProductListTypes => {
-    return { type: FETCHED_PRODUCT_LIST }
+export const fetchProductList = (page: number):fetchProductListTypes => {
+    return { type: FETCHED_PRODUCT_LIST, number: page}
 };

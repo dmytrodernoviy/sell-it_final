@@ -1,6 +1,6 @@
 
 import {put, call, takeEvery} from 'redux-saga/effects'
-import {history} from "../App"
+import {history} from "../store"
 import { requestProductAddSuccess, requestProductAddError } from '../action-creators/productItemActionCreator';
 import { requestProductAdd } from '../api-client/userAPI';
 

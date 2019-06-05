@@ -4,29 +4,12 @@ import LoginPage from './containers/LoginPage';
 import {Switch, Route} from 'react-router-dom'
 import {Router} from 'react-router-dom'
 import {Provider} from 'react-redux';
-import {rootReducer} from './reducers/index'
-import { applyMiddleware, createStore } from "redux"
 import ProductRoutes from './routes/productRoute';
-import createSagaMiddleware from 'redux-saga'
-import { rootSaga } from './sagas/rootSaga';
-import {composeWithDevTools} from "redux-devtools-extension"
 import UserPage from './components/UserPage';
-import {createBrowserHistory} from 'history';
-import httpService from './api-client/interceptors';
 import requireAuth from './components/common/PrivateRouteHOC';
 import { autoLoginRequest } from './action-creators/authorize';
 import NotFound from './components/common/NotFound';
-
-const sagaMiddleware = createSagaMiddleware();
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(sagaMiddleware))
-);
-
-sagaMiddleware.run(rootSaga);
-
-export const history = createBrowserHistory();
-httpService.setupInterceptors(store, history)
+import { store, history } from './store';
 
 const token = localStorage.getItem("token")
 if(token) store.dispatch(autoLoginRequest(token))

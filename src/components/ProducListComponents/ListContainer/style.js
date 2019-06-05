@@ -4,7 +4,7 @@ const ListContainerStyle = styled.div`
     width: 95%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 7% 0 10vh 0;
+    padding-top: 7vh;
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;

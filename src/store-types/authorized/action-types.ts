@@ -14,6 +14,7 @@ export const GET_PROFILE_INFO = 'GET_PROFILE_INFO'
 export const GET_PROFILE_INFO_SUCCESS = 'GET_PROFILE_INFO_SUCCESS'
 export const GET_PROFILE_INFO_ERROR = 'GET_PROFILE_INFO_ERROR'
 
+
 interface LoginRequest {
     type: typeof LOGIN_REQUEST;
     values: SignInForm;
@@ -83,3 +84,4 @@ export type AuthorizedTypes = LoginRequest
     | GetProfileInfo
     | GetProfileInfoSuccess
     | GetProfileInfoError
+

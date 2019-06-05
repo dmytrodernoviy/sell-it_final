@@ -1,5 +1,5 @@
 import {put, call, takeEvery} from 'redux-saga/effects'
-import {history} from '../App'
+import {history} from '../store'
 import { logOutRequest } from '../api-client/userAPI';
 import { logOut } from '../action-creators/authorize';
 
@@ -13,7 +13,7 @@ function* logOutAsync() {
         } 
 
         } catch (error) {
-            yield put(console.log("error"));
+           history.push("/")
         }
 }
 

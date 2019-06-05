@@ -1,6 +1,6 @@
 import { logInSuccess } from "../action-creators/authorize";
 import {put, call, takeEvery} from 'redux-saga/effects'
-import {history} from '../App'
+import {history} from '../store'
 import { requestWithHeaders } from "../api-client/userAPI";
 
 function* autoLoginAsync(token) {
