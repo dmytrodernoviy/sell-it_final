@@ -32,7 +32,9 @@ const SignInForm = props => {
                        type="password" 
                        label="password" 
                        validate={required}/>
-                {authorized.errorLogin && <strong>{authorized.errorLogin.non_field_errors[0]}</strong>}
+                {authorized.errorLogin 
+                    && authorized.errorLogin.non_field_errors 
+                    && <strong>{authorized.errorLogin.non_field_errors[0]}</strong>}
                 <button type="submit" disabled={submitting}>Login</button>
             </StyledForm>
         )

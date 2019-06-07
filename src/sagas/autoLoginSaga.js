@@ -1,4 +1,4 @@
-import { logInSuccess } from "../action-creators/authorize";
+import { logInSuccess, logInError } from "../action-creators/authorize";
 import {put, call, takeEvery} from 'redux-saga/effects'
 import {history} from '../store'
 import { requestWithHeaders } from "../api-client/userAPI";
@@ -12,6 +12,7 @@ function* autoLoginAsync(token) {
         } 
 
         } catch (error) {
+            yield put(logInError(error.response.data))
             localStorage.clear()
             history.push("/login-page")
         }

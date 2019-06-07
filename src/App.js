@@ -12,7 +12,9 @@ import NotFound from './components/common/NotFound';
 import { store, history } from './store';
 
 const token = localStorage.getItem("token")
-if(token) store.dispatch(autoLoginRequest(token))
+if(token) {
+  store.dispatch(autoLoginRequest(token))
+}
 
 class App extends Component {
   

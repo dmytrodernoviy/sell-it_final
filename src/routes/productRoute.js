@@ -14,7 +14,9 @@ const mapStateToProps = state => ({
     authorized: state.authorized,
     productList: state.fetchProductListReducer.productList,
     meta: state.fetchProductListReducer.meta,
-    productItem: state.fetchProductItemReducer.productItem
+    productItem: state.fetchProductItemReducer.productItem,
+    isLoadinglist: state.fetchProductListReducer.isLoadingList,
+    isLoadingItem: state.fetchProductItemReducer.isLoadingItem
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -45,7 +47,8 @@ const ProductRoutes = ({logOut,
                         meta,
                         fetchProductList,
                         productList,
-                        productItem}) => (
+                        isLoadingItem,
+                        isLoadinglist}) => (
     <React.Fragment>
         <Context.Provider value = {{logOut, 
                                     authorized, 
@@ -59,7 +62,7 @@ const ProductRoutes = ({logOut,
                 <Route exact path="/" component={ProductList} />
                 <Route path="/product/:id" component={ProductInfo} />
             </Switch>
-        {(!productList.length && productItem.pk)
+        {(!productList.length)
             ? null
             : <Pagination meta={meta} fetchProductList={fetchProductList}/>
         }
